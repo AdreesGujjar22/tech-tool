@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --background: 222 55% 10%;
+    --foreground: 224 92% 93%;
+
+    --card: 222 39% 13%;
+    --card-foreground: 224 92% 93%;
+
+    --popover: 222 39% 13%;
+    --popover-foreground: 224 92% 93%;
+
+    --primary: 244 76% 58%;
+    --primary-foreground: 242 100% 93%;
+
+    --secondary: 222 39% 18%;
+    --secondary-foreground: 224 92% 93%;
+
+    --muted: 222 39% 18%;
+    --muted-foreground: 250 12% 81%;
+
+    --accent: 242 100% 87%;
+    --accent-foreground: 222 55% 10%;
+
+    --destructive: 4 100% 84%;
+    --destructive-foreground: 222 55% 10%;
+
+    --border: 246 10% 36%;
+    --input: 225 25% 22%;
+    --ring: 244 76% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 39% 13%;
+    --sidebar-foreground: 224 92% 93%;
+    --sidebar-primary: 244 76% 58%;
+    --sidebar-primary-foreground: 242 100% 93%;
+    --sidebar-accent: 222 39% 18%;
+    --sidebar-accent-foreground: 224 92% 93%;
+    --sidebar-border: 246 10% 36%;
+    --sidebar-ring: 244 76% 58%;
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+    font-family: 'Plus Jakarta Sans', -apple-system, Roboto, Helvetica, sans-serif;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  body {
+    line-height: 1.5;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-family: 'Plus Jakarta Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(90deg, #C3C0FF 0%, #4CD7F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(23, 31, 51, 0.40);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(195, 192, 255, 0.10);
+    box-shadow: inset 0 1px 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-dark {
+    background: rgba(23, 31, 51, 0.60);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(195, 192, 255, 0.10);
+    box-shadow: inset 0 1px 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav {
+    background: rgba(19, 27, 46, 0.60);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(70, 69, 85, 0.20);
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, #4F46E5 0%, #03B5D3 100%);
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .btn-secondary {
+    background: rgba(23, 31, 51, 0.40);
+    border: 1px solid #464555;
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: inset 0 1px 1px 1px rgba(255, 255, 255, 0.05);
+  }
+
+  .section-bg-alt {
+    background: #060E20;
+    border-top: 1px solid rgba(70, 69, 85, 0.10);
+    border-bottom: 1px solid rgba(70, 69, 85, 0.10);
+  }
+}
