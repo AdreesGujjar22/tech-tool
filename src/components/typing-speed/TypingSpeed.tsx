@@ -58,54 +58,6 @@ export default function TypingSpeed() {
     overflow-x: hidden;
   }
 
-  /* HEADER */
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: var(--accent);
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-  }
-
-  .header-nav {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .nav-btn {
-    background: none;
-    border: none;
-    color: var(--text-sub);
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-family: var(--font-ui);
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
-    display: flex; align-items: center; gap: 6px;
-  }
-  .nav-btn:hover { color: var(--text-main); background: var(--surface); }
-
   /* MAIN */
   main {
     flex: 1;
@@ -113,7 +65,7 @@ export default function TypingSpeed() {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    padding: 120px 20px;
     gap: 36px;
   }
 
@@ -429,8 +381,6 @@ export default function TypingSpeed() {
 
   /* RESPONSIVE */
   @media (max-width: 600px) {
-    header { padding: 14px 20px; }
-    .header-nav { gap: 8px; }
     .words-wrapper { font-size: 1rem; }
     .toolbar { gap: 4px; padding: 8px 10px; }
     .tb-btn { padding: 5px 8px; font-size: 0.78rem; }
@@ -439,20 +389,12 @@ export default function TypingSpeed() {
   }
 
   @media (max-width: 400px) {
-    .logo span { display: none; }
     .toolbar-divider { display: none; }
   }
 </style>
 
 </head>
 <body>
-
-<header>
-  <div class="logo">
-    <div class="logo-icon">⌨</div>
-    <span>TypeRush</span>
-  </div>
-</header>
 
 <main>
 

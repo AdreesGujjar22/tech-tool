@@ -1,5 +1,3 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 const qrItems = [
@@ -45,7 +43,12 @@ const typeColors = {
 
 export default function Tools() {
   const [copied, setCopied] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+
+  const filteredItems = qrItems.filter((item) =>
+    item.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const handleShare = async (e: React.MouseEvent<HTMLButtonElement>, title: string, url: string) => {
     e.stopPropagation()
@@ -100,7 +103,9 @@ export default function Tools() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search archives..."
+                  placeholder="Search tech tools..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                   className="min-w-[280px] px-10 py-4 rounded-[12px] border border-[rgba(70,69,85,0.30)] bg-[#131B2E] text-[#6B7280] placeholder-[#6B7280] focus:outline-none focus:border-[#4F46E5]"
                 />
                 <svg
@@ -120,7 +125,8 @@ export default function Tools() {
 
           {/* QR Items Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {qrItems.map((item) => (
+            {filteredItems.length > 0 ? (
+              filteredItems.map((item) => (
               <div key={item.id} className="glass-card-dark p-6 rounded-[12px] flex flex-col gap-4 hover:cursor-pointer" onClick={() => navigate(item.url)}>
                 {/* QR Preview */}
                 <div className="aspect-square rounded-[8px] bg-white p-4 flex items-center justify-center">
@@ -172,9 +178,15 @@ export default function Tools() {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-[#C7C4D8] text-lg">
+                  {searchQuery ? "No tools found matching your search." : "No tools available."}
+                </p>
+              </div>
+            )}
           </div>
-
           {/* CTA */}
           <div className="glass-card-dark p-16 rounded-[16px] text-center space-y-6">
             <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[rgba(79,70,229,0.10)]">
