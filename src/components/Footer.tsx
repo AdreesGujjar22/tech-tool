@@ -1,50 +1,61 @@
 import { Link } from "react-router-dom";
+import { Github, Linkedin, Terminal, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#060E20] border-t border-[rgba(70,69,85,0.10)]">
-      <div className="max-w-[1280px] mx-auto px-6 py-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
-        <div className="flex flex-col gap-2">
-          <span className="text-[#C7C4D8] text-base">Tech Tools</span>
-          <span className="text-[#C7C4D8] text-xs font-semibold tracking-[0.48px] opacity-70">
-            © {new Date().getFullYear()} Tech Tools. Advanced Encoding Systems.
-          </span>
+    <footer className="border-t border-border/60 section-bg-alt">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 md:grid-cols-4">
+          <div className="md:col-span-2">
+            <Link
+              to="/"
+              className="text-[#E2DFFF] font-bold text-2xl tracking-tight shrink-0"
+            >
+              <img src="/images/web-logo.png" alt="Tech tool logo" className="h-12" />
+            </Link>
+            <p className="mt-3 max-w-sm text-sm text-muted-foreground">
+              Deep dives, tutorials, and reviews on the tools shaping modern software engineering.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-semibold">Explore</h4>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="text-[#C7C4D8] text-xs font-semibold tracking-[0.48px] hover:text-white transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms-and-conditions"
+                  className="text-[#C7C4D8] text-xs font-semibold tracking-[0.48px] hover:text-white transition-colors hover:text-foreground"
+                >
+                  Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-display text-sm font-semibold">Follow</h4>
+            <div className="mt-3 flex gap-2">
+              <a href="#" aria-label="Twitter" className="grid size-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
+                <Twitter className="size-4" />
+              </a>
+              <a href="#" aria-label="GitHub" className="grid size-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
+                <Github className="size-4" />
+              </a>
+              <a href="#" aria-label="LinkedIn" className="grid size-9 place-items-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-accent hover:text-foreground">
+                <Linkedin className="size-4" />
+              </a>
+            </div>
+          </div>
         </div>
-
-        <div className="flex flex-wrap items-center gap-8">
-          <Link
-            to="/privacy-policy"
-            className="text-[#C7C4D8] text-xs font-semibold tracking-[0.48px] hover:text-white transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            to="/terms-and-conditions"
-            className="text-[#C7C4D8] text-xs font-semibold tracking-[0.48px] hover:text-white transition-colors"
-          >
-            Terms & Conditions
-          </Link>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <a
-            href="#"
-            className="w-10 h-10 flex items-center justify-center rounded-full glass-card hover:border-[rgba(195,192,255,0.3)] transition-colors"
-            aria-label="Website"
-          >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.83333 11.6667C5.02639 11.6667 4.26806 11.5135 3.55833 11.2073C2.84861 10.901 2.23125 10.4854 1.70625 9.96042C1.18125 9.43542 0.765625 8.81806 0.459375 8.10833C0.153125 7.39861 0 6.64028 0 5.83333C0 5.02639 0.153125 4.26806 0.459375 3.55833C0.765625 2.84861 1.18125 2.23125 1.70625 1.70625C2.23125 1.18125 2.84861 0.765625 3.55833 0.459375C4.26806 0.153125 5.02639 0 5.83333 0C6.64028 0 7.39861 0.153125 8.10833 0.459375C8.81806 0.765625 9.43542 1.18125 9.96042 1.70625C10.4854 2.23125 10.901 2.84861 11.2073 3.55833C11.5135 4.26806 11.6667 5.02639 11.6667 5.83333C11.6667 6.64028 11.5135 7.39861 11.2073 8.10833C10.901 8.81806 10.4854 9.43542 9.96042 9.96042C9.43542 10.4854 8.81806 10.901 8.10833 11.2073C7.39861 11.5135 6.64028 11.6667 5.83333 11.6667ZM5.25 10.4708V9.33333C4.92917 9.33333 4.65451 9.2191 4.42604 8.99063C4.19757 8.76215 4.08333 8.4875 4.08333 8.16667V7.58333L1.28333 4.78333C1.25417 4.95833 1.22743 5.13333 1.20312 5.30833C1.17882 5.48333 1.16667 5.65833 1.16667 5.83333C1.16667 7.00972 1.55313 8.04028 2.32604 8.925C3.09896 9.80972 4.07361 10.325 5.25 10.4708ZM9.275 8.98333C9.67361 8.54583 9.97743 8.05729 10.1865 7.51771C10.3955 6.97812 10.5 6.41667 10.5 5.83333C10.5 4.88056 10.2351 4.01042 9.70521 3.22292C9.17535 2.43542 8.46806 1.86667 7.58333 1.51667V1.75C7.58333 2.07083 7.4691 2.34549 7.24062 2.57396C7.01215 2.80243 6.7375 2.91667 6.41667 2.91667H5.25V4.08333C5.25 4.24861 5.1941 4.38715 5.08229 4.49896C4.97049 4.61076 4.83194 4.66667 4.66667 4.66667H3.5V5.83333H7C7.16528 5.83333 7.30382 5.88924 7.41563 6.00104C7.52743 6.11285 7.58333 6.25139 7.58333 6.41667V8.16667H8.16667C8.41944 8.16667 8.64792 8.24201 8.85208 8.39271C9.05625 8.5434 9.19722 8.74028 9.275 8.98333Z" fill="#DAE2FD"/>
-            </svg>
-          </a>
-          <a
-            href="#"
-            className="w-10 h-10 flex items-center justify-center rounded-full glass-card hover:border-[rgba(195,192,255,0.3)] transition-colors"
-            aria-label="Social"
-          >
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.83333 11.6667C5.02639 11.6667 4.26806 11.5135 3.55833 11.2073C2.84861 10.901 2.23125 10.4854 1.70625 9.96042C1.18125 9.43542 0.765625 8.81806 0.459375 8.10833C0.153125 7.39861 0 6.64028 0 5.83333C0 5.02639 0.153125 4.26806 0.459375 3.55833C0.765625 2.84861 1.18125 2.23125 1.70625 1.70625C2.23125 1.18125 2.84861 0.765625 3.55833 0.459375C4.26806 0.153125 5.02639 0 5.83333 0C6.64028 0 7.39861 0.153125 8.10833 0.459375C8.81806 0.765625 9.43542 1.18125 9.96042 1.70625C10.4854 2.23125 10.901 2.84861 11.2073 3.55833C11.5135 4.26806 11.6667 5.02639 11.6667 5.83333V6.67917C11.6667 7.25278 11.4698 7.74132 11.076 8.14479C10.6823 8.54826 10.1986 8.75 9.625 8.75C9.28472 8.75 8.96389 8.67708 8.6625 8.53125C8.36111 8.38542 8.10833 8.17639 7.90417 7.90417C7.62222 8.18611 7.30382 8.39757 6.94896 8.53854C6.5941 8.67951 6.22222 8.75 5.83333 8.75C5.02639 8.75 4.33854 8.46562 3.76979 7.89687C3.20104 7.32812 2.91667 6.64028 2.91667 5.83333C2.91667 5.02639 3.20104 4.33854 3.76979 3.76979C4.33854 3.20104 5.02639 2.91667 5.83333 2.91667C6.64028 2.91667 7.32812 3.20104 7.89687 3.76979C8.46562 4.33854 8.75 5.02639 8.75 5.83333V6.67917C8.75 6.93194 8.83264 7.14583 8.99792 7.32083C9.16319 7.49583 9.37222 7.58333 9.625 7.58333C9.87778 7.58333 10.0868 7.49583 10.2521 7.32083C10.4174 7.14583 10.5 6.93194 10.5 6.67917V5.83333C10.5 4.53056 10.0479 3.42708 9.14375 2.52292C8.23958 1.61875 7.13611 1.16667 5.83333 1.16667C4.53056 1.16667 3.42708 1.61875 2.52292 2.52292C1.61875 3.42708 1.16667 4.53056 1.16667 5.83333C1.16667 7.13611 1.61875 8.23958 2.52292 9.14375C3.42708 10.0479 4.53056 10.5 5.83333 10.5H8.75V11.6667H5.83333ZM5.83333 7.58333C6.31944 7.58333 6.73264 7.41319 7.07292 7.07292C7.41319 6.73264 7.58333 6.31944 7.58333 5.83333C7.58333 5.34722 7.41319 4.93403 7.07292 4.59375C6.73264 4.25347 6.31944 4.08333 5.83333 4.08333C5.34722 4.08333 4.93403 4.25347 4.59375 4.59375C4.25347 4.93403 4.08333 5.34722 4.08333 5.83333C4.08333 6.31944 4.25347 6.73264 4.59375 7.07292C4.93403 7.41319 5.34722 7.58333 5.83333 7.58333Z" fill="#DAE2FD"/>
-            </svg>
-          </a>
+        <div className="mt-10 flex flex-col gap-2 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Tech Tools. All rights reserved.</p>
+          <p>Built for engineers who ship.</p>
         </div>
       </div>
     </footer>

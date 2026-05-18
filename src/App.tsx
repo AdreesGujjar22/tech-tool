@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Generator from "./pages/Generator";
-import Customization from "./pages/Customization";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
@@ -19,6 +18,8 @@ import TypingSpeed from "./components/typing-speed/TypingSpeed";
 import MainColorPicker from "./components/color-picker/MainColorPicker";
 import Tools from "./pages/History";
 import Help from "./pages/Help";
+import BlogsPage from "./components/tech-blogs/blog/blogs-page";
+import SingleBlog from "./components/tech-blogs/blog/single-blog";
 
 const queryClient = new QueryClient();
 
@@ -35,7 +36,6 @@ export const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/qr-generator" element={<Generator />} />
             <Route path="/tools" element={<Tools />} />
-            <Route path="/customization" element={<Customization />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/privacy-policy" element={<Privacy />} />
@@ -45,6 +45,8 @@ export const App = () => {
             <Route path="/color-picker" element={<MainColorPicker />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/help" element={<Help />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blog/:slug" element={<SingleBlog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
 

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import BlogSection from "../components/ui/blog-section";
 
 export default function Index() {
   return (
@@ -278,7 +277,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-
+      <BlogSection />
     </div>
   );
 }
