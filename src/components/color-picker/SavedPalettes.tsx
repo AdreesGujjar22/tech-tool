@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useMemo } from "react";
 import { Trash2, Search, Heart } from "lucide-react";
-import { Palette } from "../../utils/color-picker/colorUtils";
+import type { Palette } from "./lib/colorUtils";
 import { toast } from "sonner";
 
 interface SavedPalettesProps {

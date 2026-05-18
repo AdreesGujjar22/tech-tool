@@ -1,10 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import { Copy, Check, Share2 } from "lucide-react";
-import { hsvToRgb, rgbToHex, getAllColorFormats } from "../../utils/color-picker/colorConversions";
-import type { ColorFormats } from "../../utils/color-picker/colorConversions";
+import { hsvToRgb, rgbToHex, getAllColorFormats } from "./lib/colorConversions";
 import { toast } from "sonner";
-import { Header } from "./Header";
 
 export function AdvancedColorPicker() {
   const [hue, setHue] = useState(0);

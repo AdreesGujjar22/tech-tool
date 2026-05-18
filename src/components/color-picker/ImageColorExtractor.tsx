@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Upload, X, Copy, Check, Plus, Minus, Download, Image as ImageIcon } from "lucide-react";
-import { getAllColorFormats, rgbToHex } from "../../utils/color-picker/colorConversions";
+import { getAllColorFormats, rgbToHex } from "./lib/colorConversions";
 import { toast } from "sonner";
 
 interface ExtractedColor {

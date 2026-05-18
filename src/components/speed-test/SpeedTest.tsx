@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowDown, ArrowUp, Moon, Sun } from "lucide-react";
-import "../../styles/speed-test/styles.css";
 type Phase = "idle" | "download" | "upload" | "done";
 
 const TICKS = [0, 1, 5, 10, 20, 50, 100];

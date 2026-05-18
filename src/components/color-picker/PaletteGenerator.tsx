@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Shuffle, Save, Download, Code } from "lucide-react";
-import { Color, generateHarmoniousColors, colorToTailwind } from "../../utils/color-picker/colorUtils";
+import { Color, generateHarmoniousColors, colorToTailwind } from "./lib/colorUtils";
 import { ColorCard } from "./ColorCard";
 import { toast } from "sonner";
 import html2canvas from "html2canvas";

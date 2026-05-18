@@ -135,4 +135,10 @@
     border-top: 1px solid rgba(70, 69, 85, 0.10);
     border-bottom: 1px solid rgba(70, 69, 85, 0.10);
   }
+
+  /* Speed Test specific styles */
+  .dark {
+    --speed-accent: oklch(0.72 0.25 285);
+    --speed-track: oklch(0.25 0.02 260);
+  }
 }

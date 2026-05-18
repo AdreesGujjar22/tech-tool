@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Copy, Lock, LockOpen, Check } from "lucide-react";
-import { Color, getTextColor } from "../../utils/color-picker/colorUtils";
+import { Color, getTextColor } from "./lib/colorUtils";
 import { useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { toast } from "sonner";

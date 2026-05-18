@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Copy, Shuffle, Check } from "lucide-react";
-import { generateRandomColor } from "../../utils/color-picker/colorUtils";
+import { generateRandomColor } from "./lib/colorUtils";
 import { toast } from "sonner";
 
 type GradientDirection = "to right" | "to left" | "to top" | "to bottom" | "to top right" | "to bottom right";
