@@ -1,27 +1,24 @@
-'use client';
+import type { Metadata } from 'next'
+import { ReactNode } from 'react'
+import './globals.css'
 
-import React, { ReactNode } from 'react';
-import './globals.css';
-
-interface RootLayoutProps {
-  children: ReactNode;
+export const metadata: Metadata = {
+  title: 'TechTools - Smart Online Utilities',
+  description: 'Fast, free, and modern online tools for developers, creators, and everyday users.',
+  icons: {
+    icon: '/images/fav-icon.png',
+    apple: '/images/fav-icon.png',
+  },
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode
+}) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TechTools - Smart Online Utilities</title>
-        <meta
-          name="description"
-          content="Fast, free, and modern online tools for developers, creators, and everyday users."
-        />
-        <link rel="icon" type="image/png" href="/images/fav-icon.png" />
-        <link rel="apple-touch-icon" href="/images/fav-icon.png" />
-      </head>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body>{children}</body>
     </html>
-  );
+  )
 }
